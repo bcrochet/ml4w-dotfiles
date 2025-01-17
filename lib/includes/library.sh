@@ -35,12 +35,8 @@ _isInstalled() {
             fi
         ;;
         fedora)
-            check=$(dnf list --installed | grep $package)
-            if [ -z "$check" ]; then
-                echo 1
-            else
-                echo 0
-            fi        
+            check=$(rpm -q $package --quiet)
+            echo $?
         ;;
         *)
             _writeLogTerminal 2 "Selected platform $install_platform is not supported"

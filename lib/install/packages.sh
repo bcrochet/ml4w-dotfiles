@@ -11,7 +11,7 @@ source $install_directory/packages/required.sh
 # ----------------------------------------------------- 
 # Confirm start
 # ----------------------------------------------------- 
-source $install_directory/packages/confirm_start.sh
+# source $install_directory/packages/confirm_start.sh
 
 # ----------------------------------------------------- 
 # Load automation variables

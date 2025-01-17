@@ -20,14 +20,9 @@ get_latest_zip() {
 # Check if package is installed
 _isInstalled() {
     package="$1";
-    check=$(yum list installed | grep $package)
-    if [ -z "$check" ]; then
-        echo 1; #'1' means 'false' in Bash
-        return; #false
-    else
-        echo 0; #'0' means 'true' in Bash
-        return; #true
-    fi
+    check=$(rpm -q $package --quiet)
+    echo $?;
+    return;
 }
 
 # Install required packages
